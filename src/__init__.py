@@ -1,0 +1,1 @@
+"""CPW Map Editor package."""

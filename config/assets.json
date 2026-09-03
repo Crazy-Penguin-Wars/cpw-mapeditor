@@ -1,0 +1,49 @@
+{
+  "parallax": {
+    "Forest": "assets/parallax/forest",
+    "Desert": "assets/parallax/desert",
+    "Mountain": "assets/parallax/mountain",
+    "Winter": "assets/parallax/winter"
+  },
+  "items": {
+    "Wood": "assets/items/wood",
+    "Stone": "assets/items/stone",
+    "Metal": "assets/items/metal",
+    "Ice": "assets/items/ice"
+  },
+  "terrain": {
+    "Wood": "assets/terrain/forest",
+    "Desert": "assets/terrain/desert",
+    "Stone": "assets/terrain/mountain",
+    "Mountain": "assets/terrain/mountain",
+    "Ice": "assets/terrain/winter",
+    "Winter": "assets/terrain/winter"
+  },
+  "characters": {
+    "Penguin": "assets/characters/penguin"
+  },
+  "water": {
+    "Forest": "assets/water/winter",
+    "Winter": "assets/water/winter",
+    "Desert": "assets/water/desert",
+    "Mountain": "assets/water/mountain"
+  },
+  "gradients": {
+    "Forest": "assets/gradients/forest.png",
+    "Desert": "assets/gradients/desert.png",
+    "Mountain": "assets/gradients/mountain.png",
+    "Winter": "assets/gradients/winter.png"
+  },
+  "item_exports": {
+    "Metal": [
+      "ball_small", "ball_medium",
+      "cube_small", "cube_medium", "cube_large",
+      "triangle_small", "triangle_medium",
+      "rectangle_medium", "rectangle_large"
+    ]
+  },
+  "filename_rules": {
+    "parallax": "*_{export}.png",
+    "item": "*_{fixture}_1.png"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "grid_size": 100,
+  "test_server_url": "http://127.0.0.1:8000",
+  "preview_parallax_offset_cells": 0,
+  "preview_water_surface_offset": 74.2,
+  "terrain_top_border_angle": 30,
+  "themes": {
+    "Forest": ["#6fa76a", "#315e3c", "level_graphics/level_assets_forest.swf", "#5c2c36"],
+    "Winter": ["#b9def0", "#6f9db5", "level_graphics/level_assets_winter.swf", "#4f9eb2"],
+    "Mountain": ["#a98277", "#604744", "level_graphics/level_assets_mountain.swf", "#4b3736"],
+    "Desert": ["#e2b36c", "#a86d3a", "level_graphics/level_assets_desert.swf", "#864e36"]
+  },
+  "material_colors": {"Wood": "#a46b3f", "Stone": "#78818b", "Metal": "#9caab2", "Ice": "#8ed9ee", "Desert": "#d6a369"},
+  "item_materials": ["Wood", "Stone", "Metal", "Ice"],
+  "terrain_materials": ["Wood", "Stone", "Metal", "Ice", "Desert"],
+  "terrain_texture_swfs": {
+    "Wood": "level_graphics/level_assets_forest.swf",
+    "Desert": "level_graphics/level_assets_desert.swf",
+    "Stone": "level_graphics/level_assets_mountain.swf",
+    "Ice": "level_graphics/level_bg_winter.swf",
+    "Metal": "level_graphics/level_assets_desert.swf"
+  },
+  "fixtures": {
+    "Ball small": {"name":"BallSmall","fixture":"ball_small","size":[30,30]}, "Ball medium": {"name":"BallMedium","fixture":"ball_medium","size":[45,45]},
+    "Cube small": {"name":"CubeSmall","fixture":"cube_small","size":[34,34]}, "Cube medium": {"name":"CubeMedium","fixture":"cube_medium","size":[50,50]}, "Cube large": {"name":"CubeLarge","fixture":"cube_big","size":[72,72]},
+    "Triangle small": {"name":"TriangleSmall","fixture":"triangle_small","size":[45,38]}, "Triangle medium": {"name":"TriangleMedium","fixture":"triangle_medium","size":[64,54]},
+    "Rectangle medium": {"name":"RectangleMedium","fixture":"rectangle_medium","size":[74,40]}, "Rectangle large": {"name":"RectangleLarge","fixture":"rectangle_large","size":[105,52]},
+    "Plank small": {"name":"PlankSmall","fixture":"plank_small","size":[80,22]}, "Plank medium": {"name":"PlankMedium","fixture":"plank_medium","size":[116,24]}, "Plank large": {"name":"PlankLarge","fixture":"plank_large","size":[165,28]}
+  },
+  "default_settings": {"level_name": "Untitled_Level", "theme": "Forest", "zoom_side": "height", "width": 3000, "height": 1174, "water_velocity_x": 0, "water_velocity_y": 0, "water_line": 880, "water_density": 32, "water_lineardrag": 15, "water_angulardrag": 15}
+}
