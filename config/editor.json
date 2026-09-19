@@ -1,6 +1,6 @@
 {
   "grid_size": 100,
-  "test_server_url": "http://127.0.0.1:8000",
+  "test_server_url": "https://michielvde.eu.pythonanywhere.com",
   "preview_parallax_offset_cells": 0,
   "preview_water_surface_offset": 74.2,
   "terrain_top_border_angle": 30,
