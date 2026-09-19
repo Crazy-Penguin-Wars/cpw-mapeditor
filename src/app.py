@@ -16,6 +16,7 @@ from .assets import available_item_exports
 from .config import FIXTURES, ITEM_EXPORTS, ITEM_MATERIALS, TERRAIN_MATERIALS, TEST_SERVER_URL, THEMES
 from .dialogs import ItemDialog, LayerDialog, PositionDialog, TerrainDialog
 from .model import LevelModel
+import subprocess
 
 
 class Editor(tk.Tk):
@@ -577,7 +578,10 @@ class Editor(tk.Tk):
         except OSError as e: messagebox.showerror("Cannot save level", str(e)); return
         self.dirty = False; self.title(f"Crazy Penguin Wars: Map Editor — {os.path.basename(path)}"); self.set_status(f"Saved {path}")
     def test_in_game(self):
-        """Upload the in-memory level and hand the short test URL to the Flash launcher."""
+        """Upload the in-memory level and hand the short test URL to the launcher."""
+        if len(self.model.spawns) < 4:
+            messagebox.showerror("Cannot start test", "Please place at least 4 spawn points before testing.")
+            return
         self.apply_settings()
         payload = json.dumps(self.model.data()).encode("utf-8")
         request_data = urllib.request.Request(
@@ -597,19 +601,15 @@ class Editor(tk.Tk):
             )
             return
 
-        launcher_url = "cpw://test-map?" + urllib.parse.urlencode({"url": launch_url})
+        launcher_arg = "cpw://test-map?" + urllib.parse.urlencode({"url": launch_url})
         try:
-            opened = webbrowser.open(launcher_url)
-        except webbrowser.Error as error:
-            opened = False
-            launch_error = str(error)
-        else:
-            launch_error = ""
-        if not opened:
+            LAUNCHER_EXE = Path(__file__).resolve().parent.parent / "assets" / "testlauncher" / "Crazy Penguin Wars.exe"
+            subprocess.Popen([str(LAUNCHER_EXE), launcher_arg])
+        except OSError as error:
             messagebox.showerror(
                 "Launcher not found",
-                "The level was uploaded, but Windows could not open the CPW launcher. "
-                f"Install or start the launcher, then open:\n\n{launcher_url}\n\n{launch_error}",
+                f"The level was uploaded, but the CPW launcher could not be started "
+                f"from {LAUNCHER_EXE}.\n\n{error}",
             )
             return
         self.set_status("Uploaded map and opened test session.")
